@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/loginabout" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_32"
+        >
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_16"
+            android:layout_marginRight="@dimen/view_16"
+            android:background="@color/color_white" >
+
+            <EditText
+                android:id="@+id/ac_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_48"
+                android:layout_marginLeft="@dimen/view_16"
+                android:layout_marginRight="@dimen/view_16"
+                android:background="@null"
+                android:paddingLeft="@dimen/view_32"
+                android:textColor="@color/color_smoke"
+                android:textSize="@dimen/text_small_l"
+                android:digits="1234567890"
+                android:maxLength="11"
+                android:singleLine="true"
+                />
+            <!-- android:hint="@string/shoujihao"   -->
+
+
+            <ImageView
+                android:id="@+id/ac_imageView1"
+                android:layout_width="@dimen/view_48"
+                android:layout_height="@dimen/view_48"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:padding="@dimen/view_12"
+                android:scaleType="centerInside"
+                android:src="@mipmap/username" />
+
+            <View
+                android:id="@+id/ac_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_1"
+                android:layout_below="@+id/ac_username"
+                android:background="@color/gray2" />
+
+            <EditText
+                android:id="@+id/ac_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_48"
+                android:layout_below="@+id/ac_line"
+                android:layout_marginLeft="@dimen/view_16"
+                android:layout_marginRight="@dimen/view_16"
+                android:background="@color/color_white"
+
+                android:password="true"
+                android:singleLine="true"
+                android:paddingLeft="@dimen/view_32"
+                android:gravity="center|left"
+                android:textColor="@color/color_smoke"
+                android:textSize="@dimen/text_small_l"
+                />
+            <!--  android:hint="@string/mima" -->
+            <ImageView
+                android:id="@+id/ac_imageView2"
+                android:layout_width="@dimen/view_48"
+                android:layout_height="@dimen/view_48"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@+id/ac_password"
+                android:padding="@dimen/view_12"
+                android:scaleType="centerInside"
+                android:src="@mipmap/password" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/ac_butt_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_48"
+            android:layout_below="@+id/layout"
+            android:layout_marginLeft="@dimen/view_16"
+            android:layout_marginRight="@dimen/view_16"
+            android:layout_marginTop="@dimen/view_40"
+            android:background="@drawable/ac_shape_but_bule"
+            android:text="@string/denglu"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_middle_m" />
+
+        <TextView
+            android:id="@+id/text_zhuce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ac_butt_login"
+            android:text="@string/zhuce"
+            android:layout_marginTop="@dimen/view_16"
+            android:layout_below="@+id/ac_butt_login"
+            android:textColor="@color/color_smoke"
+            android:textSize="@dimen/text_small_l" />
+
+        <TextView
+            android:id="@+id/text_wjmm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wangjimima"
+            android:layout_marginRight="@dimen/view_16"
+            android:layout_marginTop="@dimen/view_16"
+            android:layout_below="@+id/ac_butt_login"
+            android:textColor="@color/color_smoke"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/text_small_l"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

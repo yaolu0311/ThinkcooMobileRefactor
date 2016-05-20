@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- title的颜色 -->
+    <color name="color_title">#f1f1f1</color>
+    <!-- 深灰色 -->
+    <color name="color_smoke">#666666</color>
+    <!--白色 -->
+    <color name="color_white">#ffffff</color>
+    <!-- 按钮颜色 蓝色 -->
+    <color name="color_blue">#1e90ff</color>
+    <!-- 按钮颜色 -->
+    <color name="draw_but">#348dfe</color>
+    <!-- 环信-->
+    <color name="common_top_bar_blue">#4ebcd3</color>
+    <color name="btn_register_normal">#2dafa3</color>
+    <color name="btn_register_pressed">#4ebcd3</color>
+    <color name="btn_login_pressed">#303744</color>
+    <color name="btn_logout_normal">#d33f3f</color>
+    <color name="btn_login_normal">#007086</color>
+
+    <color name="gray2">#adadad</color>
+
+</resources>
