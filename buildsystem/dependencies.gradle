@@ -23,7 +23,7 @@ ext {
     gsonVersion = '2.3'
     okHttpVersion = '2.7.1'
     logginInterceptor = '2.6.0'
-    androidAnnotationsVersion = '21.0.3'
+    androidAnnotationsVersion = '23.1.1'
     mvp                 = "2.0.1"
     fresco              = "0.9.0+"
     androidannotations  = "3.3.1"

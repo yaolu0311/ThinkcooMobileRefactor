@@ -12,6 +12,7 @@ import rx.Observable;
  */
 public interface AccountRepository {
 
+    Observable<Account> getLoggedAccount();
     Observable<User> login(Account account);
     Observable logout(Account account);
     Observable register(Account account,Vcode vcode, License license);

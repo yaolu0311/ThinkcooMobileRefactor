@@ -3,7 +3,7 @@ package com.thinkcoo.mobile.presentation;
 import android.accounts.NetworkErrorException;
 import android.content.Context;
 import com.thinkcoo.mobile.R;
-import com.thinkcoo.mobile.model.exception.PhoneNumberOrPasswordErrorException;
+import com.thinkcoo.mobile.model.exception.account.PhoneNumberOrPasswordErrorException;
 
 import javax.inject.Inject;
 

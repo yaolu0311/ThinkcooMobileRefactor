@@ -1,6 +1,7 @@
 package com.thinkcoo.mobile.model.repository.impl;
 
 import com.thinkcoo.mobile.model.db.AccountDao;
+import com.thinkcoo.mobile.model.db.DaoFactory;
 import com.thinkcoo.mobile.model.entity.Account;
 import com.thinkcoo.mobile.model.entity.License;
 import com.thinkcoo.mobile.model.entity.User;
@@ -11,17 +12,18 @@ import com.thinkcoo.mobile.model.rest.ApiFactoryImpl;
 import com.thinkcoo.mobile.model.rest.apis.AccountApi;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import rx.Observable;
 
 /**
  * Created by Administrator on 2016/5/19.
  */
+@Singleton
 public class AccountRepositoryImpl implements AccountRepository {
 
-    @Inject
+
     AccountDao accountDao;
-    @Inject
     AccountApi accountApi;
 
     @Inject
@@ -56,4 +58,8 @@ public class AccountRepositoryImpl implements AccountRepository {
          return null;
     }
 
+    @Override
+    public Observable<Account> getLoggedAccount() {
+        return null;
+    }
 }

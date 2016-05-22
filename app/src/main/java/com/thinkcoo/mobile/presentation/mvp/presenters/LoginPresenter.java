@@ -1,6 +1,5 @@
 package com.thinkcoo.mobile.presentation.mvp.presenters;
 
-import android.content.Context;
 import android.text.TextUtils;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.hannesdorfmann.mosby.mvp.MvpView;
@@ -44,9 +43,7 @@ public class LoginPresenter extends MvpBasePresenter<MvpView>{
         Account account = createAccountFromView();
         if (checkInputPass(account)){
             getLoginView().showProgressDialog(R.string.loading);
-            LoginUseCase.LoginRequestValue loginRequestValue = new LoginUseCase.LoginRequestValue();
-            userLoginUseCase.setRequestValues(loginRequestValue);
-            userLoginUseCase.execute(loginSub);
+            userLoginUseCase.execute(loginSub,account);
         }
     }
 

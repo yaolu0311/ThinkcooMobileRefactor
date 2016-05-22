@@ -6,7 +6,6 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
-
     defaultConfig {
         applicationId "com.thinkcoo.mobile"
         minSdkVersion 14
@@ -36,12 +35,12 @@ dependencies {
 
     //lib
     apt appDependencies.daggerCompiler
-    apt appDependencies.excilysAndroidannotationsCompiler
+    //apt appDependencies.excilysAndroidannotationsCompiler
     compile appDependencies.dagger
     compile appDependencies.butterKnife
     compile appDependencies.recyclerView
     compile appDependencies.rxJava
-    compile appDependencies.excilysAndroidannotations
+    //compile appDependencies.excilysAndroidannotations
     compile appDependencies.rxAndroid
     compile appDependencies.mvp
     compile appDependencies.mvpViewstate

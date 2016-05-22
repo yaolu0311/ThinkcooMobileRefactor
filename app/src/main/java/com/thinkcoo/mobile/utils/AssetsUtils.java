@@ -10,4 +10,7 @@ public class AssetsUtils {
     @Inject
     public AssetsUtils() {
     }
+    public boolean copyDataDictionaryDbFile() {
+        return false;
+    }
 }

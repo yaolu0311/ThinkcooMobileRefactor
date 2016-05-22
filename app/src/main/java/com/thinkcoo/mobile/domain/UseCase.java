@@ -6,11 +6,10 @@ import rx.Subscriber;
 import rx.Subscription;
 import rx.subscriptions.Subscriptions;
 
-public abstract class UseCase<Q extends UseCase.RequestValues> {
+public abstract class UseCase<Q extends Object> {
 
     private final Scheduler mUiThread;
     private final Scheduler mExecutorThread;
-    private  Q requestValues;
 
     private Subscription subscription = Subscriptions.empty();
 
@@ -19,10 +18,10 @@ public abstract class UseCase<Q extends UseCase.RequestValues> {
         this.mExecutorThread = mExecutorThread;
     }
 
-    protected abstract Observable buildUseCaseObservable();
+    protected abstract Observable buildUseCaseObservable(Q ... q);
 
-    public void execute(Subscriber UseCaseSubscriber) {
-        this.subscription = this.buildUseCaseObservable()
+    public void execute(Subscriber UseCaseSubscriber , Q ... q) {
+        this.subscription = this.buildUseCaseObservable(q)
                 .subscribeOn(mExecutorThread)
                 .observeOn(mUiThread)
                 .subscribe(UseCaseSubscriber);
@@ -34,15 +33,4 @@ public abstract class UseCase<Q extends UseCase.RequestValues> {
         }
     }
 
-    public void setRequestValues(Q requestValues){
-        this.requestValues = requestValues;
-    }
-
-    public Q getRequestValues(){
-        return requestValues;
-    }
-
-    public interface RequestValues {
-
-    }
 }

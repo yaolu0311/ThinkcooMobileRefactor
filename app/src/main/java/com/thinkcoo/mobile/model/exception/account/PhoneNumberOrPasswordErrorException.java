@@ -1,4 +1,4 @@
-package com.thinkcoo.mobile.model.exception;
+package com.thinkcoo.mobile.model.exception.account;
 
 /**
  * Created by Robert.yao on 2016/3/28.

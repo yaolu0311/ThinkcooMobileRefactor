@@ -17,7 +17,7 @@ public class AccountModule {
 
     @Provides
     @ActivityScope
-    LoginUseCase provideLoginUseCase(AccountRepositoryImpl repository, @Named(ApplicationModule.UI_THREAD_NAMED) Scheduler uiThread, @Named(ApplicationModule.EXECUTOR_THREAD_NAMED) Scheduler executorThread){
+    LoginUseCase provideLoginUseCase(AccountRepository repository, @Named(ApplicationModule.UI_THREAD_NAMED) Scheduler uiThread, @Named(ApplicationModule.EXECUTOR_THREAD_NAMED) Scheduler executorThread){
         return new LoginUseCase(uiThread,executorThread,repository);
     }
 

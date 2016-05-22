@@ -6,8 +6,15 @@ import android.widget.SimpleCursorTreeAdapter;
 import com.thinkcoo.mobile.ThinkcooApp;
 import com.thinkcoo.mobile.model.cache.LoginUserCache;
 import com.thinkcoo.mobile.model.cache.LoginUserCacheImpl;
+import com.thinkcoo.mobile.model.db.AccountDao;
+import com.thinkcoo.mobile.model.entity.Account;
+import com.thinkcoo.mobile.model.repository.AccountRepository;
+import com.thinkcoo.mobile.model.repository.AppLaunchRepository;
+import com.thinkcoo.mobile.model.repository.impl.AccountRepositoryImpl;
+import com.thinkcoo.mobile.model.repository.impl.AppLaunchRepositoryImpl;
 import com.thinkcoo.mobile.model.rest.ApiFactory;
 import com.thinkcoo.mobile.model.rest.ApiFactoryImpl;
+import com.thinkcoo.mobile.model.rest.apis.AccountApi;
 import com.thinkcoo.mobile.presentation.ErrorMessageFactory;
 import com.thinkcoo.mobile.presentation.views.activitys.base.ActivityHistoryStack;
 import com.thinkcoo.mobile.presentation.views.activitys.base.Navigator;
@@ -48,7 +55,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    ApiFactory provideApiFactoryImpl(){
+    ApiFactory provideApiFactory(){
         return application.getApiFactory();
     }
 
@@ -93,7 +100,7 @@ public class ApplicationModule {
      * 提供全局唯一的单线程队列式的线程框架
      */
     @Provides @Named(EXECUTOR_SINGLE_THREAD_NAMED) @Singleton
-    Scheduler provideSigleThreadExecutor(){
+    Scheduler provideSignleThreadExecutor(){
         //TODO
         return null;
     }
@@ -124,4 +131,25 @@ public class ApplicationModule {
     ErrorMessageFactory provideErrorMessageFactory(){
         return new ErrorMessageFactory(application.getApplicationContext());
     }
+
+    /********************************** Repository and Api **************************************************8*/
+
+    @Singleton
+    @Provides
+    AppLaunchRepository provideAppLaunchRepository(AppLaunchRepositoryImpl appLaunchRepository){
+        return  appLaunchRepository;
+    }
+
+    @Singleton
+    @Provides
+    AccountApi provideAccountApi(){
+        return application.getApiFactory().createApiByClass(AccountApi.class);
+    }
+    @Singleton
+    @Provides
+    AccountRepository provideAccountRepository(AccountRepositoryImpl accountRepository){
+        return accountRepository;
+    }
+
+
 }
